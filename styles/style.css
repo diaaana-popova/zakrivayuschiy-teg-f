@@ -4,13 +4,194 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--text-weight);
+  min-inline-size: 375px;
 }
+
+.page-width {
+  inline-size: var(--main-width);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  margin-block: 100px;
+}
+
+.header__title, .header__subtitle {
+  font-family: var(--accent-font);
+  color: #000;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  padding-block-start: clamp(7.5rem, 0.751vw + 7.324rem, 8rem);
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  padding-block-end: clamp(7.5rem, 0.751vw + 7.324rem, 8rem);
+  text-transform: uppercase;
+}
+
+.main__content {
+
+}
+
+.main__content-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.main__content-list:not(:last-child) {
+  gap: 50px;
+}
+
+.main__content-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+}
+
+.card__title {
+  font-variation-settings: 'wght' var(--title-weight);
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  line-height: 21.78px;
+  color: var(--main-color);
+  padding-inline: 10px;
+  padding-block-start: 4px;
+  padding-block-end: 5px;
+}
+
+.card__image {
+  inline-size: 100%;
+  display: block;
+}
+
+.card__image-block {
+  position: relative;
+  overflow: hidden;
+  border-block-start: 2px solid var(--main-color);
+  border-block-end: 2px solid var(--main-color);
+}
+
+.card__image-label {
+  position: absolute;
+  top: 23px;
+  right: 11px;
+  font-size: 14px;
+  font-family: var(--accent-font);
+  color: var(--main-color);
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 
+  -1px 0 var(--background-color), 
+  0 1px var(--background-color), 
+  1px 0 var(--background-color), 
+  0 -1px var(--background-color);
+}
+
+@supports ((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+  .card__image-label {
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
+    text-shadow: none;
+  }
+}
+
+.main__content-card:nth-child(2) .card__image {
+  filter: grayscale(70%);
+}
+
+.main__content-card:nth-child(3) .card__image {
+  filter: saturate(300%);
+}
+
+.main__content-card:nth-child(4) .card__image {
+  filter: contrast(120%);
+}
+
+.main__content-card:nth-child(5) .card__image {
+  filter: invert(80%);
+}
+
+.main__content-card:nth-child(6) .card__image {
+  filter: sepia(80%);
+}
+
+.main__content-card:nth-child(7) .card__image {
+  filter: blur(1rem);
+}
+
+.main__content-card:nth-child(8) .card__image {
+  filter: blur(0.1rem) grayscale(50%);
+}
+
+.card__paragraph {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 25px;
+  padding-block-start: 21px;
+  padding-block-end: 24px;
+}
+
+.card__paragraph:not(:last-child) {
+  gap: 27px;
+}
+
+.card__text {
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-inline-end: 25px;
+  padding-block-end: 25px;
+  gap: 6px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.card__like-button {
+  background-color: transparent;
+  border: 2px solid var(--main-color);
+  padding-inline: 35px;
+  padding-block-start: 11px;
+  padding-block-end: 5px;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  color: var(--main-color);
+  font-size: 14px;
+}
+
+
