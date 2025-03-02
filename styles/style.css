@@ -198,6 +198,7 @@
   font-family: var(--accent-font), 'Fantasy', sans-serif;
   color: var(--main-color);
   padding-block: 9px;
+  font-size: 14px;
 }
 
 .button__covered {
@@ -240,7 +241,7 @@
 }
 
 .floppy__icon {
-  block-size: 28px;
+  block-size: 21px;
   mix-blend-mode: difference;
   color: var(--background-color);
 }
@@ -285,9 +286,13 @@ dialog::backdrop {
     padding: 17px 20.5px 15px 20.5px;
   }
 
+  .floppy__icon {
+    block-size: 28px;
+  }
+
   .floppy__dialog[open] {
     inline-size: min(100%, 341px);
-    padding-inline: 41px;
+    padding-inline: 38px;
   }
 
   .card__image-label {
